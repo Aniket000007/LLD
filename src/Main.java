@@ -1,4 +1,8 @@
 
+import InterfaceSegmented.chef;
+import InterfaceSegmented.chefInterface;
+import InterfaceSegmented.waiter;
+import InterfaceSegmented.waiterInterface;
 import LiskovSubstitution.bicycle;
 import LiskovSubstitution.bike;
 import LiskovSubstitution.twoWheeler;
@@ -37,9 +41,20 @@ public class Main {
 
         //LISKOV SUBSTITUTION PRINCIPLE
 
-        twoWheeler vehicle = new bike();
-        vehicle.accelerate();
-        twoWheeler vehicle2 = new bicycle();
-        vehicle2.accelerate();
+//        twoWheeler vehicle = new bike();
+//        vehicle.accelerate();
+//        twoWheeler vehicle2 = new bicycle();
+//        vehicle2.accelerate();
+
+
+        // Interface Segmented Principle
+
+        chefInterface chef = new chef();
+        chef.cookFood();
+        chef.decideMenu();
+
+        waiterInterface waiter = new waiter();
+        waiter.orderTake();
+        waiter.serveCustomers();
     }
 }
