@@ -8,6 +8,7 @@ import LiskovSubstitution.bike;
 import LiskovSubstitution.twoWheeler;
 import OpenForExtension.DBinvoiceDao;
 import OpenForExtension.FileInvoiceDao;
+import dependencyInversionn.Keyboard;
 import dependencyInversionn.bluetoothKeyboard;
 import dependencyInversionn.macbook;
 import dependencyInversionn.wiredKeyboard;
@@ -48,13 +49,21 @@ public class Main {
 
 
         // Interface Segmented Principle
+//
+//        chefInterface chef = new chef();
+//        chef.cookFood();
+//        chef.decideMenu();
+//
+//        waiterInterface waiter = new waiter();
+//        waiter.orderTake();
+//        waiter.serveCustomers();
 
-        chefInterface chef = new chef();
-        chef.cookFood();
-        chef.decideMenu();
 
-        waiterInterface waiter = new waiter();
-        waiter.orderTake();
-        waiter.serveCustomers();
+
+        //Dependency Inversion
+//        Keyboard keyboard = new wiredKeyboard();
+        //Keyboard keyboard = new bluetoothKeyboard();
+//        macbook mac = new macbook(keyboard);
+//        mac.display();
     }
 }
