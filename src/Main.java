@@ -1,4 +1,6 @@
 
+import OpenForExtension.DBinvoiceDao;
+import OpenForExtension.FileInvoiceDao;
 import dependencyInversionn.bluetoothKeyboard;
 import dependencyInversionn.macbook;
 import dependencyInversionn.wiredKeyboard;
@@ -18,7 +20,14 @@ public class Main {
 //        InvoicePrinter print = new InvoicePrinter(invoice);
 //        print.print();
 
+        //Open for extension / Closed for modification
 
+        Marker marker = new Marker("Reynolds", "blue",2,50);
+        invoice invoice = new invoice(20,marker);
+        DBinvoiceDao dao = new DBinvoiceDao();
+        dao.save();
+        FileInvoiceDao dao2 = new FileInvoiceDao();
+        dao2.save();
         
     }
 }
