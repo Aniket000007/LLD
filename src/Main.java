@@ -12,6 +12,11 @@ import dependencyInversionn.Keyboard;
 import dependencyInversionn.bluetoothKeyboard;
 import dependencyInversionn.macbook;
 import dependencyInversionn.wiredKeyboard;
+import observerPattern.observable.iphoneObservableImpl;
+import observerPattern.observable.stockObservable;
+import observerPattern.observer.emailAlertObserver;
+import observerPattern.observer.mobileAlertObserver;
+import observerPattern.observer.notificationAlertObserver;
 import singleResponsibility.InvoiceDao;
 import singleResponsibility.InvoicePrinter;
 import singleResponsibility.Marker;
@@ -65,5 +70,21 @@ public class Main {
         //Keyboard keyboard = new bluetoothKeyboard();
 //        macbook mac = new macbook(keyboard);
 //        mac.display();
+
+        // ObserverPattern
+
+        stockObservable stock = new iphoneObservableImpl();
+        notificationAlertObserver obj1 = new mobileAlertObserver(stock,989126928);
+        notificationAlertObserver obj2 = new emailAlertObserver(stock,"xyz@gmail.com");
+        notificationAlertObserver obj3 = new emailAlertObserver(stock,"abc@gmail.com");
+
+        iphoneObservableImpl iphone = new iphoneObservableImpl();
+        iphone.add(obj1);
+        iphone.add(obj2);
+        iphone.add(obj3);
+
+        iphone.setStockCount(10);
+
+
     }
 }
