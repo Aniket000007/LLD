@@ -1,4 +1,4 @@
-import Strategy.typeOfStrategy.DriveStrategy;
+package Strategy.typeOfStrategy;
 
 public class Vehicle implements DriveStrategy {
 

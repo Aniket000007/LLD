@@ -16,6 +16,8 @@ import dependencyInversionn.Keyboard;
 import dependencyInversionn.bluetoothKeyboard;
 import dependencyInversionn.macbook;
 import dependencyInversionn.wiredKeyboard;
+import factoryPattern.shape;
+import factoryPattern.shapeFactory;
 import observerPattern.observable.iphoneObservableImpl;
 import observerPattern.observable.stockObservable;
 import observerPattern.observer.emailAlertObserver;
@@ -91,8 +93,14 @@ public class Main {
 
         //DECORATOR DESIGN PATTERN
 
-        basePizza pizza = new mushroom(new extraCheese(new farmHouse())); //farmhouse ka decorator extra cheese fir unka decorator mushroom
-        System.out.print(pizza.cost());
+//        basePizza pizza = new mushroom(new extraCheese(new farmHouse())); //farmhouse ka decorator extra cheese fir unka decorator mushroom
+//        System.out.print(pizza.cost());
+
+        //FACTORY DESIGN PATTERN
+
+//        shapeFactory sh = new shapeFactory();
+//        shape shap =  sh.getshape("RECTANGLE");
+//        shap.draw();
 
 
     }
