@@ -8,6 +8,10 @@ import LiskovSubstitution.bike;
 import LiskovSubstitution.twoWheeler;
 import OpenForExtension.DBinvoiceDao;
 import OpenForExtension.FileInvoiceDao;
+import decoratorDesignPattern.basePizza;
+import decoratorDesignPattern.extraCheese;
+import decoratorDesignPattern.farmHouse;
+import decoratorDesignPattern.mushroom;
 import dependencyInversionn.Keyboard;
 import dependencyInversionn.bluetoothKeyboard;
 import dependencyInversionn.macbook;
@@ -73,17 +77,22 @@ public class Main {
 
         // ObserverPattern
 
-        stockObservable stock = new iphoneObservableImpl();
-        notificationAlertObserver obj1 = new mobileAlertObserver(stock,989126928);
-        notificationAlertObserver obj2 = new emailAlertObserver(stock,"xyz@gmail.com");
-        notificationAlertObserver obj3 = new emailAlertObserver(stock,"abc@gmail.com");
+//        stockObservable stock = new iphoneObservableImpl();
+//        notificationAlertObserver obj1 = new mobileAlertObserver(stock,989126928);
+//        notificationAlertObserver obj2 = new emailAlertObserver(stock,"xyz@gmail.com");
+//        notificationAlertObserver obj3 = new emailAlertObserver(stock,"abc@gmail.com");
+//
+//        iphoneObservableImpl iphone = new iphoneObservableImpl();
+//        iphone.add(obj1);
+//        iphone.add(obj2);
+//        iphone.add(obj3);
+//
+//        iphone.setStockCount(10);
 
-        iphoneObservableImpl iphone = new iphoneObservableImpl();
-        iphone.add(obj1);
-        iphone.add(obj2);
-        iphone.add(obj3);
+        //DECORATOR DESIGN PATTERN
 
-        iphone.setStockCount(10);
+        basePizza pizza = new mushroom(new extraCheese(new farmHouse())); //farmhouse ka decorator extra cheese fir unka decorator mushroom
+        System.out.print(pizza.cost());
 
 
     }
